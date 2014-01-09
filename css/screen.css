@@ -1,0 +1,43 @@
+header {
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+    color: #5d5d5d;
+}
+
+    header nav a {
+        float: right;
+        margin-top: 22px;
+    }
+
+    header h1 {
+        float: left;
+    }
+
+#canvas {
+    background-color: #ffffd2;
+    min-height: 340px;
+    text-align: center;
+    padding: 10px;
+}
+
+#canvas p {
+    cursor: default;
+    color: gray;
+    padding-top: 80px;
+    font-size: 50px;
+}
+
+.button {
+    display: block;
+    padding: 10px 25px 10px 25px;
+    text-decoration: none;
+    background: #ff92d4;
+    color: #89437f;
+}
+
+#settings-button {
+    text-indent: -99999px;
+    width: 10px;
+    background: url(../img/gear.png) no-repeat center center #ffd6e7;
+}
