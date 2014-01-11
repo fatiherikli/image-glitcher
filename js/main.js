@@ -1,9 +1,30 @@
-var ImageGlitcher = $.Class.extend({
+String.prototype.replaceAt = function(index, character) {
+  return this.substr(0, index) + character + this.substr(index+character.length);
+};
+
+var Base64ImageGlitcher = $.Class.extend({
+    glitch: function (imageData) {
+        var indicator = 'base64,',
+            parts = imageData.split(indicator),
+            data = atob(parts[1]),
+            prefix = parts[0] + indicator;
+        for (var i=0; i < data.length; i++) {
+            var randomNumber = parseInt(Math.random() * (data.length / 10));
+            if (i % randomNumber == 0 && i > (data.length / 20)) {
+                data = data.replaceAt(i, data.charAt(i+1));
+            }
+        }
+        return prefix + btoa(data);
+    }
+});
+
+var ImageGlitcherApp = $.Class.extend({
 
     glitchButtonSelector: null,
     workspaceSelector: null,
 
     acceptedTypes: ["image/jpg", "image/jpeg", "image/png", "image/gif"],
+    glitcher: new Base64ImageGlitcher(),
 
     init: function (options) {
         $.extend(this, options);
@@ -18,12 +39,8 @@ var ImageGlitcher = $.Class.extend({
         return canvas;
     },
 
-    preProcess: function (imageData, randomNumber) {
-        return [
-            imageData.substr(0, imageData.length / 2),
-            imageData.substr((imageData.length / 2) - randomNumber, imageData.length / 2),
-            imageData.substr(imageData.length / 2, imageData.length / 2)
-        ].join("");
+    preProcess: function (imageData) {
+        return this.glitcher.glitch(imageData);
     },
 
     postProcess: function () {
@@ -36,9 +53,7 @@ var ImageGlitcher = $.Class.extend({
             workspace = $(this.workspaceSelector);
 
         // glitch selected image
-        var glitchedImageData = this.preProcess(
-            this.selectedImageData,
-            parseInt(Math.random() * (this.selectedImageData.length / 3)));
+        var glitchedImageData = this.preProcess(this.selectedImageData);
 
         image.attr("src", glitchedImageData);
 
@@ -85,7 +100,7 @@ var ImageGlitcher = $.Class.extend({
 
         $(this.glitchButtonSelector).on('click', function () {
             this.glitch();
-        }.bind(this));
+        }.bind(this)).click();
 
     },
 
