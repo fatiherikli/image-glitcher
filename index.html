@@ -25,7 +25,8 @@
     to improve your experience.</p>
 <![endif]-->
 
-<header>
+<div id="header">
+    <header>
     <h1>Image Glitcher</h1>
     <nav>
         <a href="#" class="button" id="generate-button">Glitch!</a>
@@ -38,6 +39,7 @@
         <p id="filters"></p>
     </div>
 </header>
+</div>
 
 <div id="canvas">
     <!--<p>Drag the image file here.</p>-->
@@ -62,8 +64,8 @@
         glitcher: new ImageGlitcher.Base64ImageGlitcher(),
         filters: [
             new ImageGlitcher.GrayscaleFilter(),
-            new ImageGlitcher.BrightnessFilter(),
-            new ImageGlitcher.TVFilter(),
+            new ImageGlitcher.TVFilter(),,
+            new ImageGlitcher.BrightnessFilter()
         ]
     }).render();
 </script>

@@ -60,7 +60,7 @@ ImageGlitcher.BrightnessFilter = ImageGlitcher.BaseFilter.extend({
     label: "Brightness",
     isSelected: false,
 
-    brightnessLevel: 40,
+    brightnessLevel: 100,
 
     manipulatePixels: function (pixels) {
         var data = pixels.data;

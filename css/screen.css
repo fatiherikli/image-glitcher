@@ -1,8 +1,13 @@
+#header {
+    background-color: #1e1e1e;
+}
+
 header {
     width: 800px;
     margin: auto;
     overflow: hidden;
     color: #5d5d5d;
+    /*background-color: #373737;*/
 }
 
     header nav a {
@@ -11,7 +16,9 @@ header {
     }
 
     header h1 {
+        color: #afafaf;
         float: left;
+        margin-left: 40px;
     }
 
 #canvas {
