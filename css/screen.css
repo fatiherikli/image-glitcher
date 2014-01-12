@@ -36,8 +36,41 @@ header {
     color: #89437f;
 }
 
-#settings-button {
+#options-button {
     text-indent: -99999px;
     width: 10px;
     background: url(../img/gear.png) no-repeat center center #ffd6e7;
+}
+
+#options-dialog {
+    position: absolute;
+    width: 300px;
+    background-color: #ffd6e7;
+    margin-left: 350px;
+    margin-top: 22px;
+    padding-bottom: 15px;
+    display: none;
+}
+
+#options-dialog h3 {
+    padding: 0;
+    margin: 20px 20px 10px;
+}
+
+#options-dialog p {
+    margin: 10px 25px;
+    padding: 0;
+}
+
+#options-dialog #filters {
+
+}
+
+#options-dialog #filters label {
+    display: block;
+    margin-bottom: 9px;
+}
+
+#options-dialog #filters input {
+    margin-right: 10px;
 }
