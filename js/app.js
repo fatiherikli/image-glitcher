@@ -108,11 +108,14 @@ ImageGlitcher.Application = $.Class.extend({
 
         this.filters.forEach(function (filter) {
 
-            var filterLabel = $("<label>").html(filter.label);
+            var filterLabel = $("<label>").html(filter.label),
+                filterInput = $("<input type='checkbox'>")
+                    .val(filter.identifier)
+                    .prependTo(filterLabel);
 
-            $("<input type='checkbox'>")
-                .val(filter.identifier)
-                .prependTo(filterLabel);
+            if (filter.isSelected) {
+                filterInput.attr("checked", "checked")
+            }
 
             optionsDialog
                 .find("#filters")
@@ -144,6 +147,8 @@ ImageGlitcher.Application = $.Class.extend({
 
         reader.onloadend = function () {
             this.selectedImageData = reader.result;
+
+            a=(this.selectedImageData)
 
             var previewImage = $("<img>", {
                 src: this.selectedImageData
