@@ -1,5 +1,5 @@
 Image Glitcher
-==============
+--------------
 
 Glitch Art: http://en.wikipedia.org/wiki/Glitch_art
 
