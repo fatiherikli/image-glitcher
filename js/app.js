@@ -103,6 +103,14 @@ ImageGlitcher.Application = $.Class.extend({
             event.preventDefault();
         }.bind(this));
 
+        $(this.saveButtonSelector).click(function (event) {
+            if (!this.selectedImageData) {
+                window.alert('Please select a file');
+            } else {
+                this.save();
+            }
+        }.bind(this));
+
     },
 
     renderOptionsDialog: function () {
@@ -167,6 +175,11 @@ ImageGlitcher.Application = $.Class.extend({
         }.bind(this);
 
         reader.readAsDataURL(file);
+    },
+
+    save: function() {
+        workspace = $(this.workspaceSelector);
+        location.href = workspace.find('canvas').get(0).toDataURL("image/jpeg");
     }
 
 });
