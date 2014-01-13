@@ -78,6 +78,7 @@ header {
     background: #ff764e;
     color: #7d3a26;
     font-size: 20px;
+    border-left: 2px #3e3e3e solid;
 }
 
 #options-button {
@@ -122,4 +123,9 @@ header {
     position: absolute;
     margin-left: 13px;
     margin-top: -2px;
+}
+
+#save-button {
+    background: #5e5e5e;
+    color: #d1d1d1;
 }
