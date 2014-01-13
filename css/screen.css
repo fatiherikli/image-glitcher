@@ -100,10 +100,6 @@ header {
     padding: 0;
 }
 
-#options-dialog #filters {
-
-}
-
 #options-dialog #filters label {
     display: block;
     margin-bottom: 9px;
