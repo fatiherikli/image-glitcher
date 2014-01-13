@@ -98,8 +98,9 @@ ImageGlitcher.Application = $.Class.extend({
             }
         }.bind(this));
 
-        $(this.optionsButtonSelector).click(function () {
+        $(this.optionsButtonSelector).click(function (event) {
             $(this.optionsDialogSelector).toggle();
+            event.preventDefault();
         }.bind(this));
 
     },
