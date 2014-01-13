@@ -179,7 +179,7 @@ ImageGlitcher.Application = $.Class.extend({
 
     save: function() {
         workspace = $(this.workspaceSelector);
-        location.href = workspace.find('canvas').get(0).toDataURL("image/jpeg");
+        window.open(workspace.find('canvas').get(0).toDataURL("image/jpeg"));
     }
 
 });
