@@ -39,6 +39,11 @@ header {
     padding-bottom: 40px;
 }
 
+#canvas img,
+#canvas canvas {
+    box-shadow: 0 0 20px #181818;
+}
+
 #preview-background {
     width: 100%;
     height: 100%;

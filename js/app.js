@@ -161,7 +161,7 @@ ImageGlitcher.Application = $.Class.extend({
 
             $(this.previewBackgroundSelector)
                 .css("background-image", "url(" + this.selectedImageData +")") // :(
-                .height($("body").height());
+                .height($(document).height());
 
         }.bind(this);
 
