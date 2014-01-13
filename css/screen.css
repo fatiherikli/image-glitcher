@@ -21,10 +21,14 @@ header {
     }
 
     header h1 {
-        color: #e0dace;
+        color: #d1d1d1;
         float: left;
         margin-left: 40px;
         font-weight: normal;
+        font-size: 38px;
+        padding: 0;
+        margin-top: 18px;
+        margin-bottom: 17px;
     }
 
 #canvas {
