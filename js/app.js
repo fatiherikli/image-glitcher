@@ -17,7 +17,7 @@ ImageGlitcher.Application = $.Class.extend({
         var canvas = document.createElement('canvas'),
             context = canvas.getContext('2d');
         canvas.width = imageElement.width();
-        canvas.height = imageElement.width();
+        canvas.height = imageElement.height();
         context.drawImage(imageElement.get(0), 0, 0);
         return canvas;
     },
@@ -89,13 +89,14 @@ ImageGlitcher.Application = $.Class.extend({
         var optionsDialog = this.renderOptionsDialog();
 
         $(this.glitchButtonSelector).on('click', function () {
-
-            var glitchLevel = optionsDialog.find("#glitch-level").val(),
-                filters = this.getSelectedFilters();
-
-            this.glitch(glitchLevel, filters);
-
-        }.bind(this)).click();
+            if (!this.selectedImageData) {
+                window.alert('Please select a file');
+            } else {
+                var glitchLevel = optionsDialog.find("#glitch-level").val(),
+                    filters = this.getSelectedFilters();
+                this.glitch(glitchLevel, filters);
+            }
+        }.bind(this));
 
         $(this.optionsButtonSelector).click(function () {
             $(this.optionsDialogSelector).toggle();
@@ -148,13 +149,15 @@ ImageGlitcher.Application = $.Class.extend({
         reader.onloadend = function () {
             this.selectedImageData = reader.result;
 
-            a=(this.selectedImageData)
-
             var previewImage = $("<img>", {
                 src: this.selectedImageData
             });
 
             canvas.html(previewImage);
+
+            $(this.previewBackgroundSelector)
+                .css("background-image", "url(" + this.selectedImageData +")") // :(
+                .height($("body").height());
 
         }.bind(this);
 

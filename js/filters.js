@@ -82,7 +82,7 @@ ImageGlitcher.TVFilter = ImageGlitcher.BaseFilter.extend({
 
     identifier: "tv",
     label: "Tv Filter",
-    isSelected: true,
+    isSelected: false,
 
     thresholdLevel: 40,
 
