@@ -112,3 +112,9 @@ header {
 #options-dialog #filters input {
     margin-right: 10px;
 }
+
+#options-dialog #glitch-level-current {
+    position: absolute;
+    margin-left: 13px;
+    margin-top: -2px;
+}

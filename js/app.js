@@ -124,6 +124,10 @@ ImageGlitcher.Application = $.Class.extend({
 
         });
 
+        optionsDialog.find("#glitch-level").on('change', function () {
+            optionsDialog.find("#glitch-level-current").html($(this).val());
+        });
+
         return optionsDialog;
     },
 
