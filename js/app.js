@@ -178,7 +178,7 @@ ImageGlitcher.Application = $.Class.extend({
     },
 
     save: function() {
-        workspace = $(this.workspaceSelector);
+        var workspace = $(this.workspaceSelector);
         window.open(workspace.find('canvas').get(0).toDataURL("image/jpeg"));
     }
 
