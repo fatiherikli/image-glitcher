@@ -84,8 +84,6 @@ ImageGlitcher.TVFilter = ImageGlitcher.BaseFilter.extend({
     label: "Tv Filter",
     isSelected: false,
 
-    thresholdLevel: 40,
-
     manipulatePixels: function (pixels, width, height) {
         var data = pixels.data;
 
