@@ -43,7 +43,7 @@ ImageGlitcher.GrayscaleFilter = ImageGlitcher.BaseFilter.extend({
             var b = data[i+2];
 
             // CIE luminance for the RGB
-            // http://en.wikipedia.org/wiki/Luminance_(relative)
+            // https://en.wikipedia.org/wiki/Luminance_(relative)
 
             var v = 0.2126 * r + 0.7152 * g + 0.0722 * b;
             data[i] = data[i+1] = data[i+2] = v
